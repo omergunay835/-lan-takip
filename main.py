@@ -168,3 +168,4 @@ if __name__ == "__main__":
         print(f"{len(unique_results)} adet uygun ilan bulundu ve Telegram'a atıldı.")
     else:
         print("Bütün siteler taranmıştır. Niteliklerine uygun yeni ilan bulunamadı.")
+send_telegram("✅ Test Mesajı: Telegram botun ve otomasyonun sorunsuz çalışıyor!")
