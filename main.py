@@ -144,18 +144,18 @@ def scan_kamuilan_sbb():
     return list(set(found))
 
 def scan_kariyer_kapisi():
-    """4. Kariyer Kapısı Taraması"""
+    """4. Kariyer Kapısı Kamu Alımları Taraması"""
     print("4/6 - Kariyer Kapısı taranıyor...")
-    url = "https://kariyerkapisi.cbiko.gov.tr/"
+    url = "https://isealimkariyerkapisi.cbiko.gov.tr/"
     found = []
     try:
-        res = requests.get(url, headers=HEADERS, verify=False, timeout=15)
+        res = requests.get(url, headers=HEADERS, verify=False, timeout=20)
         soup = BeautifulSoup(res.text, "html.parser")
         for a in soup.find_all("a"):
             text = a.get_text().strip()
             href = a.get("href", "")
             if href and not href.startswith("http"):
-                href = "https://kariyerkapisi.cbiko.gov.tr" + href
+                href = "https://isealimkariyerkapisi.cbiko.gov.tr" + href
             
             matched, reason = check_text_or_pdf(text, href)
             if matched:
