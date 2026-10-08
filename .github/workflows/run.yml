@@ -4,7 +4,7 @@ on:
   schedule:
     # Her gün Türkiye saatiyle sabah 09:00 ve akşam 18:00'de çalışır
     - cron: '0 6,15 * * *'
-  workflow_dispatch: # Elle tetikleme butonu ekler
+  workflow_dispatch: # Elle tetikleme butonu
 
 jobs:
   build:
@@ -12,12 +12,12 @@ jobs:
 
     steps:
     - name: Repoyu Klonla
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Python Kur
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
-        python-python-version: '3.10'
+        python-version: '3.10'
 
     - name: Kütüphaneleri Yükle
       run: |
